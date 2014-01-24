@@ -3,6 +3,7 @@ using System.Collections;
 
 public class WinTrigger : MonoBehaviour {
 
+    public bool win = true;
 	// Use this for initialization
 	void Start () {
 	
@@ -18,7 +19,15 @@ public class WinTrigger : MonoBehaviour {
         Debug.Log("WinTrigger triggered with " + other.gameObject.name);
         if (other.gameObject.name == "Player")
         {
-            GameLogicManager.singletonInstance.NotifyWonGame();
+            if (win)
+            {
+                GameLogicManager.singletonInstance.NotifyWonGame();
+            }
+            else
+            {
+                GameLogicManager.singletonInstance.NotifyLostGame();
+            }
+            
         }
     }
 }
