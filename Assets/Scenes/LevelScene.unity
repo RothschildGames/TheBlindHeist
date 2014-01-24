@@ -155,7 +155,7 @@ Camera:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 9630829}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
@@ -396,6 +396,7 @@ MonoBehaviour:
   playerCamera: {fileID: 0}
   cameras: []
   noiseCamera: {fileID: 0}
+  switchTimeout: .5
 --- !u!81 &40367866
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1245,6 +1246,7 @@ MonoBehaviour:
   playerCamera: {fileID: 0}
   cameras: []
   noiseCamera: {fileID: 0}
+  switchTimeout: .5
 --- !u!81 &199671354
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1567,7 +1569,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400018, guid: 449b48f7eb5d87a4baaa5fb73f875a59, type: 3}
   m_PrefabInternal: {fileID: 1738782991}
   m_GameObject: {fileID: 230475342}
-  m_LocalRotation: {x: -9.5385555e-10, y: 3.8625787e-09, z: -.116402201, w: .993202209}
+  m_LocalRotation: {x: -9.53855439e-10, y: 3.86257826e-09, z: -.116402194, w: .99320215}
   m_LocalPosition: {x: -.00030665606, y: 0, z: 3.72529022e-11}
   m_LocalScale: {x: 1, y: .99999994, z: 1.00000012}
   m_Children: []
@@ -1785,6 +1787,7 @@ MonoBehaviour:
   playerCamera: {fileID: 0}
   cameras: []
   noiseCamera: {fileID: 0}
+  switchTimeout: .5
 --- !u!81 &241713588
 AudioListener:
   m_ObjectHideFlags: 0
@@ -2312,7 +2315,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400062, guid: 449b48f7eb5d87a4baaa5fb73f875a59, type: 3}
   m_PrefabInternal: {fileID: 1738782991}
   m_GameObject: {fileID: 282742456}
-  m_LocalRotation: {x: -2.77497514e-09, y: 3.25224042e-10, z: -.116402209, w: .993202209}
+  m_LocalRotation: {x: -2.77497492e-09, y: 3.25224014e-10, z: -.116402201, w: .99320215}
   m_LocalPosition: {x: -.00030665606, y: 5.96046434e-10, z: -3.72529022e-11}
   m_LocalScale: {x: 1, y: .99999994, z: 1}
   m_Children: []
@@ -2561,7 +2564,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &323493143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2930,7 +2933,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 561132c606ce849e8ae32d9811e9a652, type: 2}
   m_PrefabInternal: {fileID: 2066015775}
   m_GameObject: {fileID: 399155190}
-  m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106709}
+  m_LocalRotation: {x: -.707106888, y: 0, z: 0, w: .707106769}
   m_LocalPosition: {x: 0, y: 200, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -3016,6 +3019,7 @@ MonoBehaviour:
   playerCamera: {fileID: 0}
   cameras: []
   noiseCamera: {fileID: 0}
+  switchTimeout: .5
 --- !u!81 &399155198
 AudioListener:
   m_ObjectHideFlags: 0
@@ -3235,6 +3239,7 @@ MonoBehaviour:
   playerCamera: {fileID: 0}
   cameras: []
   noiseCamera: {fileID: 0}
+  switchTimeout: .5
 --- !u!81 &412719350
 AudioListener:
   m_ObjectHideFlags: 0
@@ -3301,6 +3306,7 @@ GameObject:
   - 114: {fileID: 424477458}
   - 114: {fileID: 424477457}
   - 114: {fileID: 424477456}
+  - 148: {fileID: 424477460}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -3423,6 +3429,18 @@ CharacterController:
   m_SkinWidth: .0500000007
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!148 &424477460
+NetworkView:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 424477454}
+  m_Enabled: 1
+  m_StateSynchronization: 1
+  m_Observed: {fileID: 424477455}
+  m_ViewID:
+    m_ID: 1
+    m_Type: 1
 --- !u!1 &428174536
 GameObject:
   m_ObjectHideFlags: 0
@@ -3787,8 +3805,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: .00235700607, y: -.0129385442, z: 1.78813934e-07}
-    m_Extent: {x: .925978363, y: .167533353, z: .783008754}
+    m_Center: {x: .00235700607, y: -.0129385442, z: 2.98023224e-07}
+    m_Extent: {x: .925978482, y: .167533353, z: .783008754}
   m_DirtyAABB: 0
 --- !u!1 &463702548
 GameObject:
@@ -3811,7 +3829,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400094, guid: 449b48f7eb5d87a4baaa5fb73f875a59, type: 3}
   m_PrefabInternal: {fileID: 1738782991}
   m_GameObject: {fileID: 463702548}
-  m_LocalRotation: {x: 3.24468652e-09, y: -1.31797062e-09, z: -.116402201, w: .993202209}
+  m_LocalRotation: {x: 3.2446863e-09, y: -1.31797051e-09, z: -.116402194, w: .99320215}
   m_LocalPosition: {x: -.00018735393, y: 0, z: -5.96046434e-10}
   m_LocalScale: {x: 1, y: 1.00000012, z: 1.00000012}
   m_Children:
@@ -4216,6 +4234,7 @@ MonoBehaviour:
   playerCamera: {fileID: 0}
   cameras: []
   noiseCamera: {fileID: 0}
+  switchTimeout: .5
 --- !u!81 &493858729
 AudioListener:
   m_ObjectHideFlags: 0
@@ -4753,7 +4772,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 449b48f7eb5d87a4baaa5fb73f875a59, type: 3}
   m_PrefabInternal: {fileID: 1738782991}
   m_GameObject: {fileID: 645567416}
-  m_LocalRotation: {x: .000723019999, y: .0122492509, z: -.0771517009, w: .996943831}
+  m_LocalRotation: {x: .000723020057, y: .0122492518, z: -.0771517083, w: .996943891}
   m_LocalPosition: {x: -.000856468687, y: -2.56085386e-05, z: .000309830677}
   m_LocalScale: {x: 1, y: .99999994, z: .99999994}
   m_Children:
@@ -5210,6 +5229,7 @@ MonoBehaviour:
   - {fileID: 199671352}
   - {fileID: 241713586}
   noiseCamera: {fileID: 399155191}
+  switchTimeout: .5
 --- !u!1001 &788234432
 Prefab:
   m_ObjectHideFlags: 0
@@ -5745,6 +5765,7 @@ MonoBehaviour:
   playerCamera: {fileID: 0}
   cameras: []
   noiseCamera: {fileID: 0}
+  switchTimeout: .5
 --- !u!81 &858953711
 AudioListener:
   m_ObjectHideFlags: 0
@@ -5820,7 +5841,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400080, guid: 449b48f7eb5d87a4baaa5fb73f875a59, type: 3}
   m_PrefabInternal: {fileID: 1738782991}
   m_GameObject: {fileID: 901614148}
-  m_LocalRotation: {x: -.000723021571, y: -.012249249, z: -.077151686, w: .996943831}
+  m_LocalRotation: {x: -.000723021629, y: -.01224925, z: -.0771516934, w: .996943891}
   m_LocalPosition: {x: -.000856468687, y: -2.56079438e-05, z: -.000309830619}
   m_LocalScale: {x: .99999994, y: .99999994, z: .999999881}
   m_Children:
@@ -6420,7 +6441,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 8d7c4d7fcd474994da554675c1e96972, type: 2}
   m_PrefabInternal: {fileID: 344995396}
   m_GameObject: {fileID: 1119554921}
-  m_LocalRotation: {x: 0, y: -.707106829, z: 0, w: .707106709}
+  m_LocalRotation: {x: 0, y: -.707106888, z: 0, w: .707106769}
   m_LocalPosition: {x: 19.5, y: -3.76661682, z: 15.0000019}
   m_LocalScale: {x: 30, y: 3, z: 1}
   m_Children: []
@@ -7990,7 +8011,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400132, guid: 449b48f7eb5d87a4baaa5fb73f875a59, type: 3}
   m_PrefabInternal: {fileID: 1738782991}
   m_GameObject: {fileID: 1547126215}
-  m_LocalRotation: {x: -2.61657735e-08, y: 4.85078886e-07, z: -.11913725, w: .992877841}
+  m_LocalRotation: {x: -2.61657718e-08, y: 4.85078829e-07, z: -.119137242, w: .992877781}
   m_LocalPosition: {x: -.00348940003, y: -.000203568372, z: -1.9324943e-10}
   m_LocalScale: {x: 1.00000012, y: 1.00000012, z: 1}
   m_Children:
@@ -8152,6 +8173,7 @@ MonoBehaviour:
   playerCamera: {fileID: 0}
   cameras: []
   noiseCamera: {fileID: 0}
+  switchTimeout: .5
 --- !u!81 &1550033158
 AudioListener:
   m_ObjectHideFlags: 0
@@ -8212,7 +8234,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 561132c606ce849e8ae32d9811e9a652, type: 2}
   m_PrefabInternal: {fileID: 1868047725}
   m_GameObject: {fileID: 1550033151}
-  m_LocalRotation: {x: .122787811, y: .696364284, z: -.122787833, w: .696364164}
+  m_LocalRotation: {x: .122787818, y: .696364343, z: -.122787841, w: .696364224}
   m_LocalPosition: {x: -29.1428261, y: 1.60000002, z: -6.24297523}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -9007,7 +9029,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400046, guid: 449b48f7eb5d87a4baaa5fb73f875a59, type: 3}
   m_PrefabInternal: {fileID: 1738782991}
   m_GameObject: {fileID: 1838704890}
-  m_LocalRotation: {x: -6.10994544e-09, y: 5.87341242e-09, z: -.116402209, w: .993202209}
+  m_LocalRotation: {x: -6.10994499e-09, y: 5.87341198e-09, z: -.116402201, w: .99320215}
   m_LocalPosition: {x: -.00018735393, y: 0, z: -5.96046434e-10}
   m_LocalScale: {x: .99999994, y: 1, z: 1}
   m_Children:
@@ -9991,6 +10013,7 @@ MonoBehaviour:
   playerCamera: {fileID: 0}
   cameras: []
   noiseCamera: {fileID: 0}
+  switchTimeout: .5
 --- !u!81 &2080780911
 AudioListener:
   m_ObjectHideFlags: 0
