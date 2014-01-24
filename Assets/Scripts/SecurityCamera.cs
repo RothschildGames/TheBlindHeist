@@ -5,7 +5,7 @@ public class SecurityCamera : MonoBehaviour {
 
 	public float speed = 1.0f;
 	public float angle = 45f;
-	public float timeout = 3f;
+	public float timeout = 2f;
 
 	private float startY;
 	private int direction = 1;
