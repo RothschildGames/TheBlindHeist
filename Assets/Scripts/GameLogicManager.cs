@@ -3,8 +3,10 @@ using System.Collections;
 
 public class GameLogicManager : MonoBehaviour {
 
-    public bool wonGame;
-    public bool lostGame;
+    internal bool wonGame;
+	internal bool lostGame;
+	public float levelDurarion = 60;
+	private float remainingDuration;
 
     
     public static GameLogicManager singletonInstance;
@@ -17,25 +19,39 @@ public class GameLogicManager : MonoBehaviour {
             gameObject.SetActive(false);
             return;
         }
+		remainingDuration = levelDurarion;
         singletonInstance = this;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if (!isOver()) {
+			remainingDuration = Mathf.Max(remainingDuration - Time.deltaTime, 0);
+			if (remainingDuration == 0) {
+				NotifyLostGame();
+			}
+		}
 	}
 
 	public void NotifyLostGame()
 	{
-		Debug.Log("Lost Game!");
-		wonGame = false;
-		lostGame = true;
+		if (!isOver()) {
+			Debug.Log ("Lost Game!");
+			wonGame = false;
+			lostGame = true;
+		}
 	}
 	
     public void NotifyWonGame()
     {
-        Debug.Log("Won Game!");
-        wonGame = true;
-        lostGame = false;
+		if (!isOver()) {
+			Debug.Log ("Won Game!");
+			wonGame = true;
+			lostGame = false;
+		}
     }
+
+	public bool isOver() {
+		return (wonGame || lostGame);
+	}
 }
