@@ -17,7 +17,7 @@ public class MenuUserInterface : MonoBehaviour {
 
 
 		if(GUI.Button(new Rect(325,200,300,60), "Start Local Game")) {
-			Application.LoadLevel(1);
+			Application.LoadLevel("LevelScene");
 		}
 	
 		if(GUI.Button(new Rect(325,300,300,60), "Host Server")) {
