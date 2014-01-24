@@ -1798,9 +1798,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 9630835}
   cameras:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 579838919}
+  - {fileID: 1414699671}
+  - {fileID: 2025129336}
 --- !u!1 &2025129335
 GameObject:
   m_ObjectHideFlags: 0
