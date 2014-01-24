@@ -396,6 +396,7 @@ MonoBehaviour:
   playerCamera: {fileID: 0}
   cameras: []
   noiseCamera: {fileID: 0}
+  switchTimeout: .5
 --- !u!81 &40367866
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1245,6 +1246,7 @@ MonoBehaviour:
   playerCamera: {fileID: 0}
   cameras: []
   noiseCamera: {fileID: 0}
+  switchTimeout: .5
 --- !u!81 &199671354
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1785,6 +1787,7 @@ MonoBehaviour:
   playerCamera: {fileID: 0}
   cameras: []
   noiseCamera: {fileID: 0}
+  switchTimeout: .5
 --- !u!81 &241713588
 AudioListener:
   m_ObjectHideFlags: 0
@@ -3016,6 +3019,7 @@ MonoBehaviour:
   playerCamera: {fileID: 0}
   cameras: []
   noiseCamera: {fileID: 0}
+  switchTimeout: .5
 --- !u!81 &399155198
 AudioListener:
   m_ObjectHideFlags: 0
@@ -3065,7 +3069,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4294967039
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_HDR: 0
@@ -3235,6 +3239,7 @@ MonoBehaviour:
   playerCamera: {fileID: 0}
   cameras: []
   noiseCamera: {fileID: 0}
+  switchTimeout: .5
 --- !u!81 &412719350
 AudioListener:
   m_ObjectHideFlags: 0
@@ -4216,6 +4221,7 @@ MonoBehaviour:
   playerCamera: {fileID: 0}
   cameras: []
   noiseCamera: {fileID: 0}
+  switchTimeout: .5
 --- !u!81 &493858729
 AudioListener:
   m_ObjectHideFlags: 0
@@ -5210,6 +5216,7 @@ MonoBehaviour:
   - {fileID: 199671352}
   - {fileID: 241713586}
   noiseCamera: {fileID: 399155191}
+  switchTimeout: .5
 --- !u!1001 &788234432
 Prefab:
   m_ObjectHideFlags: 0
@@ -5745,6 +5752,7 @@ MonoBehaviour:
   playerCamera: {fileID: 0}
   cameras: []
   noiseCamera: {fileID: 0}
+  switchTimeout: .5
 --- !u!81 &858953711
 AudioListener:
   m_ObjectHideFlags: 0
@@ -8152,6 +8160,7 @@ MonoBehaviour:
   playerCamera: {fileID: 0}
   cameras: []
   noiseCamera: {fileID: 0}
+  switchTimeout: .5
 --- !u!81 &1550033158
 AudioListener:
   m_ObjectHideFlags: 0
@@ -9793,6 +9802,10 @@ Prefab:
       propertyPath: whiteIntensity
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2000000, guid: 561132c606ce849e8ae32d9811e9a652, type: 2}
+      propertyPath: m_CullingMask.m_Bits
+      value: 4294967039
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11400010, guid: 561132c606ce849e8ae32d9811e9a652, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 561132c606ce849e8ae32d9811e9a652, type: 2}
@@ -9991,6 +10004,7 @@ MonoBehaviour:
   playerCamera: {fileID: 0}
   cameras: []
   noiseCamera: {fileID: 0}
+  switchTimeout: .5
 --- !u!81 &2080780911
 AudioListener:
   m_ObjectHideFlags: 0
