@@ -3,85 +3,56 @@ using System.Collections;
 
 public class NetworkManager : MonoBehaviour {
 	
-	// Use this for initialization
-	void Start () {
-		
-	}
+	void Start () {}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-	
-	
+	void Update () {}
+
 	private const string typeName = "o11";
 	private const string gameName = "o11";
-	
-	private void StartServer()
+	private HostData[] hostList;
+
+
+	//******** host code
+
+	public void StartServer()
 	{
 		Network.InitializeServer(4, 25000, !Network.HavePublicAddress());
 		MasterServer.RegisterHost(typeName, gameName);
 	}
-	
-	
-	
+
 	void OnServerInitialized()
 	{
 		Debug.Log("Server Initializied");
 	}
 	
-	
-	void OnGUI()
-	{
-		if (!Network.isClient && !Network.isServer) {
 
-			if (GUI.Button (new Rect (30, 220, 300, 60), "Start Local Game")) {
-				Application.LoadLevel ("LevelScene");
-			}
-
-			if (GUI.Button (new Rect (30, 290, 300, 60), "Host Server")) {
-				StartServer ();
-			}
-			
-			if (GUI.Button (new Rect (30, 360, 300, 60), "Join Existing Gamer")) {
-				RefreshHostList ();
-			}				
-			
-			if (hostList != null) {
-				for (int i = 0; i < hostList.Length; i++) {
-					if (GUI.Button (new Rect (400, 220 * (1 + i), 300, 60), hostList [i].gameName))
-						JoinServer (hostList [i]);
-				}
-			}
-		} else if (Network.isServer) {
-			if (GUI.Button (new Rect (30, 220, 300, 60), "Start Game")) {
-				Application.LoadLevel ("LevelScene");
-			}
-		} 
-		
-	}
-	
-	private HostData[] hostList;
-	
-	private void RefreshHostList()
+	public void RefreshHostList()
 	{
 		MasterServer.RequestHostList(typeName);
+	}
+
+	public HostData[] GetHostList()
+	{
+		return hostList;
 	}
 	
 	void OnMasterServerEvent(MasterServerEvent msEvent)
 	{
-		if (msEvent == MasterServerEvent.HostListReceived)
-			hostList = MasterServer.PollHostList();
-		
+		if (msEvent == MasterServerEvent.HostListReceived) {
+			hostList = MasterServer.PollHostList ();
+		}
 		else if (msEvent == MasterServerEvent.RegistrationSucceeded)
 			Debug.Log ("server registered");
 	}
-	
-	private void JoinServer(HostData hostData)
+
+
+
+	//******** client code
+
+	public void JoinServer(HostData hostData)
 	{
 		Debug.Log("connecting to: " + hostData.gameName);
 		Network.Connect(hostData);
-		Application.LoadLevel ("LevelScene");
 	}
 	
 	void OnConnectedToServer()
