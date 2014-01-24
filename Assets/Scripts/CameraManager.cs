@@ -12,13 +12,19 @@ public class CameraManager : MonoBehaviour {
 		new Rect (Screen.width / 2, Screen.height / 2, Screen.width / 2, Screen.height / 2),
 		new Rect (Screen.width / 2, 0, Screen.width / 2, Screen.height / 2)
 	};
-	
+
+	private Rect[] guiPositions = {
+		new Rect (0, 0, Screen.width / 2, Screen.height / 2),
+		new Rect (Screen.width / 2, 0, Screen.width / 2, Screen.height / 2),
+		new Rect (Screen.width / 2, Screen.height / 2, Screen.width / 2, Screen.height / 2)
+	};
 
 	private SecurityCamera[] currentCameras;
 	private int lastCamera;
 
 	// Use this for initialization
 	void Start () {
+
 		currentCameras = new SecurityCamera[rectPositions.Length];
 		lastCamera = currentCameras.Length - 1;
 		for (int i = 0; i < currentCameras.Length; i++) {
@@ -34,6 +40,14 @@ public class CameraManager : MonoBehaviour {
 			if (Input.GetKeyUp (KeyCode.Alpha1 + i) && !isCurrent(cameras[i])){
 				setCamera(cameras[i]);
 			}
+		}
+	}
+
+	void OnGUI()
+	{
+		for (int i = 0; i < currentCameras.Length; i++) {
+			int index = cameras.IndexOf(currentCameras[i]) + 1;
+			GUI.Label (guiPositions[i], index.ToString());
 		}
 	}
 
