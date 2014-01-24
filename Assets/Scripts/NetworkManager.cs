@@ -35,26 +35,30 @@ public class NetworkManager : MonoBehaviour {
 	{
 		if (!Network.isClient && !Network.isServer) {
 
-			if(GUI.Button(new Rect(30,270,300,60), "Host Server")) {
+			if (GUI.Button (new Rect (30, 200, 300, 60), "Start Local Game")) {
+				Application.LoadLevel ("LevelScene");
+			}
+
+			if (GUI.Button (new Rect (30, 270, 300, 60), "Host Server")) {
 				StartServer ();
 			}
 			
-			if(GUI.Button(new Rect(30,340,300,60), "Join Existing Gamer")) {
+			if (GUI.Button (new Rect (30, 340, 300, 60), "Join Existing Gamer")) {
 				RefreshHostList ();
 			}				
 			
 			if (hostList != null) {
 				for (int i = 0; i < hostList.Length; i++) {
-					if (GUI.Button (new Rect(30, 410 * (1+i),300,60), hostList [i].gameName))
+					if (GUI.Button (new Rect (30, 410 * (1 + i), 300, 60), hostList [i].gameName))
 						JoinServer (hostList [i]);
 				}
-
 			}
-		}
-
-		else {
-			Application.LoadLevel("LevelScene");
-		}
+		} else if (Network.isServer) {
+			if (GUI.Button (new Rect (30, 200, 300, 60), "Start Game")) {
+				Application.LoadLevel ("LevelScene");
+			}
+		} 
+		
 	}
 	
 	private HostData[] hostList;
@@ -77,6 +81,7 @@ public class NetworkManager : MonoBehaviour {
 	{
 		Debug.Log("connecting to: " + hostData.gameName);
 		Network.Connect(hostData);
+		Application.LoadLevel ("LevelScene");
 	}
 	
 	void OnConnectedToServer()
