@@ -24,6 +24,11 @@ public class CameraManager : MonoBehaviour {
 	private SecurityCamera[] currentCameras;
 	private int lastCamera;
 
+    void Awake()
+    {
+        gameObject.SetActive(!Network.isServer);
+    }
+
 	// Use this for initialization
 	void Start () {
 
