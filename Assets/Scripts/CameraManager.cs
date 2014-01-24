@@ -23,6 +23,7 @@ public class CameraManager : MonoBehaviour {
 			}
 			if (Input.GetKeyUp (KeyCode.Equals)){
 				playerCamera.enabled = true;
+				playerCamera.camera.enabled = false;
 				playerCamera.pixelRect = new Rect(0,0,Screen.width/2, Screen.height/2);
 
 				cameras[0].camera.enabled = true;
