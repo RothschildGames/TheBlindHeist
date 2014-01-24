@@ -27,13 +27,16 @@ public class CameraManager : MonoBehaviour {
 
 				cameras[0].camera.enabled = true;
 				cameras[0].controlable = false;
-				cameras[0].camera.pixelRect = new Rect(Screen.width/2,0,Screen.width/2, Screen.height/2);
+				cameras[0].camera.pixelRect = new Rect(0,Screen.height/2,Screen.width/2, Screen.height/2);
+
 				cameras[1].camera.enabled = true;
 				cameras[1].controlable = false;
-				cameras[1].camera.pixelRect = new Rect(0,Screen.height/2,Screen.width/2, Screen.height/2);
+				cameras[1].camera.pixelRect = new Rect(Screen.width/2,Screen.height/2,Screen.width/2, Screen.height/2);
+
+
 				cameras[2].camera.enabled = true;
 				cameras[2].controlable = false;
-				cameras[2].camera.pixelRect = new Rect(Screen.width/2,Screen.height/2,Screen.width/2, Screen.height/2);
+				cameras[2].camera.pixelRect = new Rect(Screen.width/2,0,Screen.width/2, Screen.height/2);
 			}
 		}
 	}
