@@ -10,6 +10,11 @@ public class GameUserInterface : MonoBehaviour {
     public Transform playerTransform;
     public bool turnOffLights = true;
 
+    void Awake()
+    {
+        this.gameObject.SetActive(Network.isServer);
+    }
+
     void OnGUI()
     {
         //rotating 256x256 GUITexture in a GUI Group:
