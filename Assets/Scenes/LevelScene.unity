@@ -510,6 +510,10 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: .694538653
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 561132c606ce849e8ae32d9811e9a652, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 561132c606ce849e8ae32d9811e9a652, type: 2}
   m_RootGameObject: {fileID: 1466782777}
@@ -2051,7 +2055,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 561132c606ce849e8ae32d9811e9a652, type: 2}
       propertyPath: angle
-      value: 10
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 561132c606ce849e8ae32d9811e9a652, type: 2}
+      propertyPath: manualSpeed
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 561132c606ce849e8ae32d9811e9a652, type: 2}
@@ -4060,8 +4068,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  manualSpeed: 20
-  angle: 10
+  manualSpeed: 30
+  angle: 45
   timeout: 3
   leftKey: 276
   rightKey: 275
@@ -5453,6 +5461,10 @@ Prefab:
     - target: {fileID: 400000, guid: 561132c606ce849e8ae32d9811e9a652, type: 2}
       propertyPath: m_LocalRotation.w
       value: -1.60445566e-07
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 561132c606ce849e8ae32d9811e9a652, type: 2}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 561132c606ce849e8ae32d9811e9a652, type: 2}
