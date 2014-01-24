@@ -12,6 +12,8 @@ public class SecurityCamera : MonoBehaviour {
 	internal bool controlable = false;
 
 	private float startY;
+	private float targetMin;
+	private float targetMax;
 	private int direction = 1;
 
 	public KeyCode leftKey = KeyCode.LeftArrow;
@@ -21,7 +23,9 @@ public class SecurityCamera : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		startY = transform.rotation.y;
+		startY = transform.rotation.eulerAngles.y;
+		targetMin = startY - angle / 2;
+		targetMax = startY + angle / 2;
 	}
 	
 	// Update is called once per frame
@@ -49,19 +53,22 @@ public class SecurityCamera : MonoBehaviour {
 	}
 
 	void AutomaticCamera() {
-		if (atMax()) { 
-			direction = -1;
-		} else if (atMin()) {
+		if (atMin ()){
 			direction = 1;
+		} else if (atMax()){
+			direction = -1;
 		}
+
 		transform.Rotate (Vector3.up, Time.deltaTime * speed * direction);
 	}
 
 	bool atMin(){
-		return transform.rotation.y < startY - (angle * Mathf.Deg2Rad) / 2;
+		float delta = Mathf.DeltaAngle (transform.rotation.eulerAngles.y, targetMin);
+		return delta > 0 && delta < 180;
 	}
 
 	bool atMax(){
-		return transform.rotation.y > startY + (angle * Mathf.Deg2Rad) / 2;
+		float delta = Mathf.DeltaAngle (transform.rotation.eulerAngles.y, targetMax);
+		return delta < 0 && delta > -180;
 	}
 }
