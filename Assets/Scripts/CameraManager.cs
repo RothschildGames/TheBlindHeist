@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 
 public class CameraManager : MonoBehaviour {
-
-
 	public Camera playerCamera;
 	public List<SecurityCamera> cameras;
 	public SecurityCamera noiseCamera;
+	public float switchTimeout = 0.5f;
 
 	private List<SecurityCamera> noiseCameras= new List<SecurityCamera>();
 
@@ -21,41 +20,53 @@ public class CameraManager : MonoBehaviour {
 		new Rect (Screen.width / 2, Screen.height / 2, Screen.width / 2, Screen.height / 2)
 	};
 
+	private float[] transitionTimestamp;
+	private SecurityCamera[] transitionTo;
+
 	private SecurityCamera[] currentCameras;
 	private int lastCamera;
 
 	// Use this for initialization
 	void Start () {
-
 		currentCameras = new SecurityCamera[rectPositions.Length];
+		transitionTimestamp = new float[rectPositions.Length];
+		transitionTo = new SecurityCamera[rectPositions.Length];
 		lastCamera = currentCameras.Length - 1;
 		for (int i = 0; i < currentCameras.Length; i++) {
+			transitionTimestamp[i] = float.MaxValue;
 			SecurityCamera c = (SecurityCamera) SecurityCamera.Instantiate (noiseCamera);
 			c.camera.pixelRect = rectPositions[i];
 			noiseCameras.Add (c);
-			setCamera (cameras [i]);
+			setCamera (i, cameras [i]);
 		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		for (int i = 0; i < transitionTimestamp.Length; ++i) {
+			if (Time.fixedTime > transitionTimestamp[i]) {
+				transitionTimestamp[i] = float.MaxValue;
+				switchCamera (i, transitionTo[i]);
+			}
+		}
 		for (int i=0; i < cameras.Count; i++) {
 			if (Input.GetKeyUp (KeyCode.Alpha1 + i)) {
-				int currCamLocation = findCurrCamera(cameras[i]);
-				if (currCamLocation != -1) {
-					setNoiseCamera(currCamLocation);
+				int setCamLocation = findCurrCamera(cameras[i]);
+				if (setCamLocation == -1) {
+					lastCamera = (lastCamera + 1) % 3;
+					setCamLocation = lastCamera;
 				}
-				setCamera(cameras[i]);
+				setCamera(setCamLocation, cameras[i]);
 			}
 		}
 	}
 
 	void OnGUI() {
-				for (int i = 0; i < currentCameras.Length; i++) {
-						int index = cameras.IndexOf (currentCameras [i]) + 1;
-						GUI.Label (guiPositions [i], index.ToString ());
-				}
+		for (int i = 0; i < currentCameras.Length; i++) {
+			int index = cameras.IndexOf (currentCameras [i]) + 1;
+			GUI.Label (guiPositions [i], index.ToString ());
 		}
+	}
 
 
 	void setNoiseCamera(int currCamLocation) {
@@ -65,15 +76,26 @@ public class CameraManager : MonoBehaviour {
 		noiseCameras[currCamLocation].camera.enabled = true;
 	}
 
-	void setCamera (SecurityCamera c) {
-		int nextCamera = (lastCamera + 1) % currentCameras.Length;
-		if (currentCameras [nextCamera]) currentCameras [nextCamera].camera.enabled = false;
-		if (currentCameras [lastCamera]) currentCameras [lastCamera].controlable = false;
-		c.camera.pixelRect = rectPositions [nextCamera];
+	void setCamera (int camLocation, SecurityCamera c) {
+		foreach (SecurityCamera sc in cameras) {
+			sc.controlable = false;
+		}
+		if (currentCameras[camLocation]) currentCameras[camLocation].camera.enabled = false;
+		currentCameras[camLocation] = c;
+		transitionTimestamp[camLocation] = Time.fixedTime + switchTimeout;
+		transitionTo[camLocation] = c;
+		noiseCameras[camLocation].camera.enabled = true;
+	}
+
+	void switchCamera(int camLocation, SecurityCamera c) {
+		foreach (SecurityCamera sc in cameras) {
+			sc.controlable = false;
+		}
+		noiseCameras[camLocation].camera.enabled = false;
+		c.camera.pixelRect = rectPositions [camLocation];
 		c.camera.enabled = true;
 		c.controlable = true;
-		currentCameras [nextCamera] = c;
-		lastCamera = nextCamera;
+		currentCameras [camLocation] = c;
 	}
 
 	int findCurrCamera (SecurityCamera c) {
