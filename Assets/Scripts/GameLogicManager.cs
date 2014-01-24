@@ -25,6 +25,13 @@ public class GameLogicManager : MonoBehaviour {
 	
 	}
 
+	public void NotifyLostGame()
+	{
+		Debug.Log("Lost Game!");
+		wonGame = false;
+		lostGame = true;
+	}
+	
     public void NotifyWonGame()
     {
         Debug.Log("Won Game!");
