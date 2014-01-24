@@ -15,7 +15,11 @@ public class CameraManager : MonoBehaviour {
 		new Rect (Screen.width / 2, Screen.height / 2, Screen.width / 2, Screen.height / 2),
 		new Rect (Screen.width / 2, 0, Screen.width / 2, Screen.height / 2)
 	};
-	
+	private Rect[] guiPositions = {
+		new Rect (0, 0, Screen.width / 2, Screen.height / 2),
+		new Rect (Screen.width / 2, 0, Screen.width / 2, Screen.height / 2),
+		new Rect (Screen.width / 2, Screen.height / 2, Screen.width / 2, Screen.height / 2)
+	};
 
 	private SecurityCamera[] currentCameras;
 	private int lastCamera;
@@ -45,6 +49,14 @@ public class CameraManager : MonoBehaviour {
 			}
 		}
 	}
+
+	void OnGUI() {
+				for (int i = 0; i < currentCameras.Length; i++) {
+						int index = cameras.IndexOf (currentCameras [i]) + 1;
+						GUI.Label (guiPositions [i], index.ToString ());
+				}
+		}
+
 
 	void setNoiseCamera(int currCamLocation) {
 		currentCameras[currCamLocation].controlable = false;
