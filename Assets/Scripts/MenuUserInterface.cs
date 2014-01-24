@@ -21,11 +21,11 @@ public class MenuUserInterface : MonoBehaviour {
 		}
 	
 		if(GUI.Button(new Rect(325,300,300,60), "Host Server")) {
-			Application.LoadLevel(1);
+			Application.LoadLevel("LevelScene");
 		}
 
 		if(GUI.Button(new Rect(325,400,300,60), "Join Existing Gamer")) {
-			Application.LoadLevel(2);
+			Application.LoadLevel("LevelScene");
 		}
 	}
 }
