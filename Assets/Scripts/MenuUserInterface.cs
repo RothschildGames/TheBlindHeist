@@ -19,13 +19,5 @@ public class MenuUserInterface : MonoBehaviour {
 		if(GUI.Button(new Rect(325,200,300,60), "Start Local Game")) {
 			Application.LoadLevel("LevelScene");
 		}
-	
-		if(GUI.Button(new Rect(325,300,300,60), "Host Server")) {
-			Application.LoadLevel("LevelScene");
-		}
-
-		if(GUI.Button(new Rect(325,400,300,60), "Join Existing Gamer")) {
-			Application.LoadLevel("LevelScene");
-		}
 	}
 }
