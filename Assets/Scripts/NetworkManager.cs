@@ -47,10 +47,11 @@ public class NetworkManager : MonoBehaviour {
 						JoinServer (hostList [i]);
 				}
 
-				else {
-					Application.LoadLevel("LevelScene");
-				}
 			}
+		}
+
+		else {
+			Application.LoadLevel("LevelScene");
 		}
 	}
 	
