@@ -33,6 +33,8 @@ public class GameUserInterface : MonoBehaviour {
                 l.enabled = false;
             }
         }
+        playerTransform.GetComponentInChildren<Camera>().enabled = true;
+        playerTransform.GetComponentInChildren<CharacterController>().enabled = !Network.isClient;
 	}
 	
 	// Update is called once per frame
