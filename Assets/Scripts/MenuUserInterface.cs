@@ -16,8 +16,6 @@ public class MenuUserInterface : MonoBehaviour {
 	void OnGUI () {
 
 
-		if(GUI.Button(new Rect(30,200,300,60), "Start Local Game")) {
-			Application.LoadLevel("LevelScene");
-		}
+
 	}
 }
