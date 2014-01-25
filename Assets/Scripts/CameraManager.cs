@@ -112,6 +112,7 @@ public class CameraManager : MonoBehaviour {
 	}
 
 	public void initEndGame(bool isWon) {
+		if (GameRole.singletonInstance.IsRunner) return;
 		for (int i = 0; i < currentCameras.Length; ++i) {
 			currentCameras[i].camera.enabled = false;
 			currentCameras[i].controlable = false;
