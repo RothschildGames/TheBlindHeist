@@ -25,8 +25,8 @@ public class MenuUserInterface : MonoBehaviour {
 		float center = Screen.width/2;
 		float buttonWidth = 300;
 		float buttonHeight = 60;
-		float startY = 300;
-		float buttonMargin = 10;
+		float startY = Screen.height/2 + 50;
+		float buttonMargin = 5;
 		
 		float buttonX = center - buttonWidth/2;
 		
