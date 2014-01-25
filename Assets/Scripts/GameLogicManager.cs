@@ -30,9 +30,7 @@ public class GameLogicManager : MonoBehaviour {
 	void Update () {
 		if (!isOver()) {
 			Debug.Log("remainingDuration: " + remainingDuration);
-			if (Network.isServer || GameRole.singletonInstance.isLocalPlayerRunner) {
-				remainingDuration = Mathf.Max(remainingDuration - Time.deltaTime, 0);
-			}
+			remainingDuration = Mathf.Max(remainingDuration - Time.deltaTime, 0);
 			if (remainingDuration == 0) {
 				NotifyLostGame();
 			}
