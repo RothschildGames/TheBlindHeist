@@ -44,7 +44,6 @@ public class GameLogicManager : MonoBehaviour {
 			lostGame = true;
 			cameraManager.initEndGame(false);
 			hackerUI.lost();
-
 		}
 	}
 	

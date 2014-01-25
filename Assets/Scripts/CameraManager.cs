@@ -56,7 +56,7 @@ public class CameraManager : MonoBehaviour {
 			}
 		}
 		for (int i=0; i < cameras.Count; i++) {
-			if (Input.GetKeyUp (KeyCode.Alpha1 + i)) {
+			if (Input.GetKeyUp (KeyCode.Alpha0 + ((i + 1) % 10))) {
 				int setCamLocation = findCurrCamera(cameras[i]);
 				if (setCamLocation == -1) {
 					lastCamera = (lastCamera + 1) % 3;
