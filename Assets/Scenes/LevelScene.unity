@@ -375,9 +375,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 548e8f1e0c95149a386a99e6d0fba576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 0
   manualSpeed: 20
-  angle: 45
+  angle: 20
   timeout: 3
   leftKey: 276
   rightKey: 275
@@ -2877,6 +2877,14 @@ Prefab:
       propertyPath: m_CullingMask.m_Bits
       value: 4294967039
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 561132c606ce849e8ae32d9811e9a652, type: 2}
+      propertyPath: speed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 561132c606ce849e8ae32d9811e9a652, type: 2}
+      propertyPath: angle
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 561132c606ce849e8ae32d9811e9a652, type: 2}
   m_RootGameObject: {fileID: 40367858}
@@ -3301,6 +3309,14 @@ Prefab:
     - target: {fileID: 2000000, guid: 561132c606ce849e8ae32d9811e9a652, type: 2}
       propertyPath: m_CullingMask.m_Bits
       value: 4294967039
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 561132c606ce849e8ae32d9811e9a652, type: 2}
+      propertyPath: speed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 561132c606ce849e8ae32d9811e9a652, type: 2}
+      propertyPath: angle
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 561132c606ce849e8ae32d9811e9a652, type: 2}
@@ -7807,9 +7823,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 548e8f1e0c95149a386a99e6d0fba576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 0
   manualSpeed: 20
-  angle: 45
+  angle: 20
   timeout: 3
   leftKey: 276
   rightKey: 275
