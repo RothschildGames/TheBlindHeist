@@ -74,7 +74,7 @@ public class MenuUserInterface : MonoBehaviour {
 				Application.LoadLevel ("LevelScene");
 			}
 			creditStyle.alignment = TextAnchor.MiddleCenter;
-			int playersConnected = 0;
+			int playersConnected = networkManager.CountConnectedUsers();
 			GUI.Label (new Rect (buttonX, startY, buttonWidth, 30), "WAITING FOR PLAYERS: " + playersConnected + " CONNECTED", creditStyle);
 
 		} 
