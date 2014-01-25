@@ -31,7 +31,6 @@ public class GameLogicManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (!isOver()) {
-			Debug.Log("remainingDuration: " + remainingDuration);
 			remainingDuration = Mathf.Max(remainingDuration - Time.deltaTime, 0);
 			if (remainingDuration == 0) {
 				NotifyLostGame();

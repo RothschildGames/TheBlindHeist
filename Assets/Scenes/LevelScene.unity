@@ -2364,6 +2364,7 @@ MonoBehaviour:
     width: 256
     height: 256
   playerTransform: {fileID: 424477455}
+  controller: {fileID: 532314369}
 --- !u!132 &323493144
 GUIText:
   m_ObjectHideFlags: 0
@@ -3194,6 +3195,7 @@ GameObject:
   - 114: {fileID: 424477456}
   - 148: {fileID: 424477460}
   - 114: {fileID: 424477461}
+  - 114: {fileID: 424477462}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -3296,7 +3298,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69a3d3f2fb274ce387b71f628358a1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ovrCam: {fileID: 245717597}
+  ovrCamLeft: {fileID: 245717597}
+  ovrCamRight: {fileID: 841897861}
+  mainCamera: {fileID: 9630835}
+  mouseLook: {fileID: 424477462}
 --- !u!143 &424477459
 CharacterController:
   m_ObjectHideFlags: 0
@@ -3342,6 +3347,24 @@ MonoBehaviour:
   components:
   - {fileID: 424477457}
   - {fileID: 424477458}
+--- !u!114 &424477462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 424477454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68ec2fe99d1108b9d0006a298d76c639, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  axes: 1
+  sensitivityX: 15
+  sensitivityY: 0
+  minimumX: -360
+  maximumX: 360
+  minimumY: 0
+  maximumY: 0
 --- !u!1 &427607103
 GameObject:
   m_ObjectHideFlags: 0
