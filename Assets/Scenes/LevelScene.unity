@@ -7738,6 +7738,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraManager: {fileID: 787273269}
+  hackerUI: {fileID: 0}
   levelDurarion: 120
 --- !u!4 &1429298041
 Transform:
