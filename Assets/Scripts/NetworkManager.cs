@@ -2,13 +2,10 @@
 using System.Collections;
 
 public class NetworkManager : MonoBehaviour {
-	
-	void Start () {}
-	
-	void Update () {}
 
-	private const string typeName = "o11";
-	private const string gameName = "o11";
+	public string roomName = "A Blind Heist game room";
+
+	private const string typeName = "Blind Heist";
 	private HostData[] hostList;
 
 
@@ -17,7 +14,7 @@ public class NetworkManager : MonoBehaviour {
 	public void StartServer()
 	{
 		Network.InitializeServer(4, 25000, !Network.HavePublicAddress());
-		MasterServer.RegisterHost(typeName, gameName);
+		MasterServer.RegisterHost(typeName, roomName);
 	}
 
 	void OnServerInitialized()
