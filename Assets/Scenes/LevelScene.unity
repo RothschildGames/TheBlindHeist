@@ -4443,9 +4443,9 @@ MonoBehaviour:
   WireMode: 0
   LensCorrection: 1
   Chromatic: 0
-  backgroundColor: {r: .192000002, g: .301999986, b: .474999994, a: 1}
-  nearClipPlane: .150000006
-  farClipPlane: 1000
+  backgroundColor: {r: .161764681, g: .161764681, b: .161764681, a: 1}
+  nearClipPlane: .300000012
+  farClipPlane: 1
 --- !u!1 &534410926
 GameObject:
   m_ObjectHideFlags: 0
@@ -4505,6 +4505,26 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 9da535ecc7e009544bd58323d6696a4d, type: 2}
       propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 9da535ecc7e009544bd58323d6696a4d, type: 2}
+      propertyPath: backgroundColor.r
+      value: .161764681
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 9da535ecc7e009544bd58323d6696a4d, type: 2}
+      propertyPath: backgroundColor.g
+      value: .161764681
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 9da535ecc7e009544bd58323d6696a4d, type: 2}
+      propertyPath: backgroundColor.b
+      value: .161764681
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 9da535ecc7e009544bd58323d6696a4d, type: 2}
+      propertyPath: nearClipPlane
+      value: .300000012
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 9da535ecc7e009544bd58323d6696a4d, type: 2}
+      propertyPath: farClipPlane
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
