@@ -12,6 +12,12 @@ public class RemainingTimeCounter : MonoBehaviour
 			return;
 		}
 
+		// In case the game is over, we dont change the counter.
+		if (GameLogicManager.singletonInstance.isOver ()) 
+		{
+			return;
+		}
+
 		float remainingDuration = GameLogicManager.singletonInstance.GetRemainingDuration();
 		if (remainingDuration < 0)
 		{
