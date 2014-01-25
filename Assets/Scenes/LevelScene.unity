@@ -3086,8 +3086,8 @@ CharacterController:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 424477454}
   serializedVersion: 2
-  m_Height: 2
-  m_Radius: .400000006
+  m_Height: 3
+  m_Radius: 1
   m_SlopeLimit: 45
   m_StepOffset: .400000006
   m_SkinWidth: .0500000007
@@ -7188,7 +7188,7 @@ Transform:
   m_GameObject: {fileID: 1140068996}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 928562435}
   - {fileID: 2001098312}
@@ -8763,7 +8763,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1387716623}
-  m_LocalRotation: {x: .13398619, y: 0, z: 0, w: .990983188}
+  m_LocalRotation: {x: .855364263, y: 0, z: 0, w: .518027008}
   m_LocalPosition: {x: 0, y: 2.84369159, z: -8.04323006}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -8783,9 +8783,9 @@ Light:
   m_SpotAngle: 52
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
-    m_Strength: 1
+    m_Strength: .202999994
     m_Bias: .0500000007
     m_Softness: 4
     m_SoftnessFade: 1
@@ -10631,6 +10631,18 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: b4819bb9ba2e847e7aef1a3e5b5a013e, type: 2}
+    - target: {fileID: 400052, guid: 449b48f7eb5d87a4baaa5fb73f875a59, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400052, guid: 449b48f7eb5d87a4baaa5fb73f875a59, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400052, guid: 449b48f7eb5d87a4baaa5fb73f875a59, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 449b48f7eb5d87a4baaa5fb73f875a59, type: 3}
   m_RootGameObject: {fileID: 1140068996}
