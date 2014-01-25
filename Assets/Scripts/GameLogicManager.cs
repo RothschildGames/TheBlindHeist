@@ -23,7 +23,7 @@ public class GameLogicManager : MonoBehaviour {
         }
 		remainingDuration = levelDurarion;
         singletonInstance = this;
-		if (GameRole.singletonInstance.IsRunner) {
+		if (GameRole.singletonInstance.IsRunner || !GameRole.singletonInstance.IsNetworkGame) {
 			audioTracks.StartGame();
 		}
 	}
