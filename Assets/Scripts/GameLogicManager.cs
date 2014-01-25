@@ -15,6 +15,7 @@ public class GameLogicManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
+        Application.targetFrameRate = 60;
         if (singletonInstance != null)
         {
             Debug.LogError("Multiple GameLogicManager instances");

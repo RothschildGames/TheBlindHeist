@@ -36,12 +36,12 @@ public class WalkOrIdleAnimation : MonoBehaviour {
         {
             if (value)
             {
-                Debug.Log("Walking");
+                //Debug.Log("Walking");
                 animation.Play("walk", PlayMode.StopAll);
             }
             else
             {
-                Debug.Log("Idling");
+                //Debug.Log("Idling");
                 animation.Play("idle", PlayMode.StopAll);
             }
         }
@@ -51,6 +51,7 @@ public class WalkOrIdleAnimation : MonoBehaviour {
     {
         get
         {
+            //Debug.Log("Movement delta = " + MovementDelta);
             return MovementDelta > 0.1;
         }
     }
