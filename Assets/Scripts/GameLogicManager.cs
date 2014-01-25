@@ -21,13 +21,18 @@ public class GameLogicManager : MonoBehaviour {
             gameObject.SetActive(false);
             return;
         }
+		singletonInstance = this;
+	}
+
+	void Start () {
 		remainingDuration = levelDurarion;
-        singletonInstance = this;
 		if (GameRole.singletonInstance.IsRunner) {
 			audioTracks.StartGame();
 		}
-	}
 	
+	}
+
+
 	// Update is called once per frame
 	void Update () {
 		if (!isOver()) {
