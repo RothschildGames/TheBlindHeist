@@ -5,7 +5,8 @@ public class RoleStateEnabler : MonoBehaviour {
 
     public bool allowRunner;
     public bool allowHacker;
-    
+    public bool alwaysOnIfLocal;
+
     public GameObject[] gameObjects;
     public Behaviour[] components;
 
@@ -13,6 +14,10 @@ public class RoleStateEnabler : MonoBehaviour {
     {
         get
         {
+            if (alwaysOnIfLocal && !GameRole.singletonInstance.IsNetworkGame)
+            {
+                return true;
+            }
             if (GameRole.singletonInstance.IsRunner)
             {
                 return allowRunner;

@@ -8,12 +8,6 @@ public class GameUserInterface : MonoBehaviour {
     public Texture2D compassTexture;
     public Rect compassRect = new Rect(50, 0, 256, 256);
     public Transform playerTransform;
-    public bool turnOffLights = true;
-
-    void Awake()
-    {
-        this.gameObject.SetActive(Network.isServer);
-    }
 
     void OnGUI()
     {
@@ -26,15 +20,7 @@ public class GameUserInterface : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        if (turnOffLights)
-        {
-            foreach (Light l in GameObject.FindObjectsOfType<Light>())
-            {
-                l.enabled = false;
-            }
-        }
-        playerTransform.GetComponentInChildren<Camera>().enabled = true;
-        playerTransform.GetComponentInChildren<CharacterController>().enabled = !Network.isClient;
+
 	}
 	
 	// Update is called once per frame
