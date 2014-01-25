@@ -15,7 +15,7 @@ public class PlayAudio : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		StartGame ();
 	}
 	
 	// Update is called once per frame
