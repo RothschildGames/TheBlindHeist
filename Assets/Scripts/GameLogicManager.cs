@@ -3,11 +3,13 @@ using System.Collections;
 
 public class GameLogicManager : MonoBehaviour {
 	public CameraManager cameraManager;
+	public HackerUI hackerUI;
 
     internal bool wonGame;
 	internal bool lostGame;
 	public float levelDurarion = 60;
 	private float remainingDuration;
+
 
     
     public static GameLogicManager singletonInstance;
@@ -41,6 +43,8 @@ public class GameLogicManager : MonoBehaviour {
 			wonGame = false;
 			lostGame = true;
 			cameraManager.initEndGame(false);
+			hackerUI.lost();
+
 		}
 	}
 	
@@ -51,6 +55,7 @@ public class GameLogicManager : MonoBehaviour {
 			wonGame = true;
 			lostGame = false;
 			cameraManager.initEndGame(true);
+			hackerUI.won();
 		}
     }
 
