@@ -29,11 +29,25 @@ public class GameLogicManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (!isOver()) {
+			Debug.Log("remainingDuration: " + remainingDuration);
+			if (Network.isServer) {
 			remainingDuration = Mathf.Max(remainingDuration - Time.deltaTime, 0);
+			}
 			if (remainingDuration == 0) {
 				NotifyLostGame();
 			}
 		}
+	}
+
+	void OnSerializeNetworkView(BitStream stream, NetworkMessageInfo info) {
+		if (stream.isWriting) {
+			float duration = remainingDuration;
+			stream.Serialize(ref duration);
+		} else {
+			float duration = 0;
+			stream.Serialize(ref duration);
+			remainingDuration = duration;
+		}	
 	}
 
 	public void NotifyLostGame()
