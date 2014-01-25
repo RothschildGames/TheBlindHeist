@@ -26,7 +26,7 @@ public class GameLogicManager : MonoBehaviour {
 
 	void Start () {
 		remainingDuration = levelDurarion;
-		if (GameRole.singletonInstance.IsRunner) {
+		if (GameRole.singletonInstance.IsRunner || !GameRole.singletonInstance.IsNetworkGame) {
 			audioTracks.StartGame();
 		}
 	
