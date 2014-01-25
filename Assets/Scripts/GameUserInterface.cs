@@ -37,7 +37,7 @@ public class GameUserInterface : MonoBehaviour {
             {
                 guiText.text = @"You lose!";
             }
-            StartCoroutine(ReturnToMainMenuAfterDelay());
+            //StartCoroutine(ReturnToMainMenuAfterDelay());
         }
         rotationAngle = -playerTransform.rotation.eulerAngles.y;
 	}

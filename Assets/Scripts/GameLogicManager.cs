@@ -4,13 +4,12 @@ using System.Collections;
 public class GameLogicManager : MonoBehaviour {
 	public CameraManager cameraManager;
 	public HackerUI hackerUI;
+	public PlayAudio audioTracks;
 
     internal bool wonGame;
 	internal bool lostGame;
 	public float levelDurarion = 60;
 	private float remainingDuration;
-
-
     
     public static GameLogicManager singletonInstance;
 
@@ -24,6 +23,9 @@ public class GameLogicManager : MonoBehaviour {
         }
 		remainingDuration = levelDurarion;
         singletonInstance = this;
+		if (GameRole.singletonInstance.IsRunner) {
+			audioTracks.StartGame();
+		}
 	}
 	
 	// Update is called once per frame
@@ -56,6 +58,7 @@ public class GameLogicManager : MonoBehaviour {
 			lostGame = true;
 			cameraManager.initEndGame(false);
 			hackerUI.lost();
+			audioTracks.lost();
 		}
 	}
 	
@@ -67,6 +70,7 @@ public class GameLogicManager : MonoBehaviour {
 			lostGame = false;
 			cameraManager.initEndGame(true);
 			hackerUI.won();
+			audioTracks.won();
 		}
     }
 
