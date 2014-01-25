@@ -7,6 +7,7 @@ public class CameraManager : MonoBehaviour {
 	public SecurityCamera noiseCamera;
 	public float switchTimeout = 0.5f;
 	public PlayVideo hackerType;
+	public GUIStyle cameraIndicatorStyle;
 
 	private List<SecurityCamera> noiseCameras= new List<SecurityCamera>();
 
@@ -70,7 +71,7 @@ public class CameraManager : MonoBehaviour {
 	void OnGUI() {
 		for (int i = 0; i < currentCameras.Length; i++) {
 			int index = cameras.IndexOf (currentCameras [i]) + 1;
-			GUI.Label (guiPositions [i], index.ToString ());
+			GUI.Label (guiPositions [i], index.ToString (), cameraIndicatorStyle);
 		}
 	}
 
