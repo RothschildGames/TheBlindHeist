@@ -66,7 +66,7 @@ public class MenuUserInterface : MonoBehaviour {
 				}
 			}
 			creditStyle.alignment = TextAnchor.UpperCenter;
-			GUI.Label (new Rect (buttonX, Screen.height - 60, buttonWidth, 60), "MADE WITH LOVE #GGJ14 TLV\nAH, AS, IM, MS, NG, SD, YB", creditStyle);
+			GUI.Label (new Rect (buttonX, Screen.height - 60, buttonWidth, 60), "MADE WITH LOVE #GGJ14 TLV\nAH, ES, IM, MS, NG, SD, YB", creditStyle);
 
 
 		} else if (Network.isServer) {
@@ -74,7 +74,7 @@ public class MenuUserInterface : MonoBehaviour {
 				Application.LoadLevel ("LevelScene");
 			}
 			creditStyle.alignment = TextAnchor.MiddleCenter;
-			int playersConnected = 0;
+			int playersConnected = networkManager.CountConnectedUsers();
 			GUI.Label (new Rect (buttonX, startY, buttonWidth, 30), "WAITING FOR PLAYERS: " + playersConnected + " CONNECTED", creditStyle);
 
 		} 

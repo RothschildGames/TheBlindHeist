@@ -14,7 +14,7 @@ public class GameUserInterface : MonoBehaviour {
     void OnGUI()
     {
 
-		if (!OVRDevice.IsSensorPresent(0)) {
+		if (GameRole.singletonInstance.IsRunner && !OVRDevice.IsSensorPresent(0)) {
 						//rotating 256x256 GUITexture in a GUI Group:
 						GUI.BeginGroup (compassRect);
 						GUIUtility.RotateAroundPivot (rotationAngle, new Vector2 (compassRect.width / 2, compassRect.height / 2));
