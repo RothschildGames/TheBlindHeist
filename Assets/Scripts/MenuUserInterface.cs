@@ -70,9 +70,13 @@ public class MenuUserInterface : MonoBehaviour {
 
 
 		} else if (Network.isServer) {
-			if (GUI.Button (new Rect (buttonX, startY, buttonWidth, buttonHeight), "START GAME", style)) {
+			if (GUI.Button (new Rect (buttonX, startY + 40, buttonWidth, buttonHeight), "START GAME", style)) {
 				Application.LoadLevel ("LevelScene");
 			}
+			creditStyle.alignment = TextAnchor.MiddleCenter;
+			int playersConnected = 0;
+			GUI.Label (new Rect (buttonX, startY, buttonWidth, 30), "WAITING FOR PLAYERS: " + playersConnected + " CONNECTED", creditStyle);
+
 		} 
 
 	}
