@@ -34,6 +34,8 @@ public class PlayAudio : MonoBehaviour {
 	}
 
 	public void StartGame() {
+		endOfGame = false;
+		finalSequenceDone = false;
 		intro.Play();
 		gameStarted = true;
 	}
@@ -50,5 +52,9 @@ public class PlayAudio : MonoBehaviour {
 		endOfGame = true;
 		loop.loop = false;
 		isVictory = true;
+	}
+
+	public bool isDone() {
+		return finalSequenceDone;
 	}
 }
