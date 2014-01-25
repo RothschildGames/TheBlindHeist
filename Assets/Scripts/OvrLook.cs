@@ -12,24 +12,28 @@ public class OvrLook : MonoBehaviour {
 
 	void Update ()
 	{
-		ovrController.enabled = GameRole.singletonInstance.IsRunner;
+
 		if (GameRole.singletonInstance.IsRunner) {
 
 
 						if (OVRDevice.IsSensorPresent (0)) {
-							ovrCamLeft.camera.enabled = true;
-							ovrCamRight.camera.enabled = true;
-							mainCamera.enabled = false;
-							mouseLook.enabled = false;
-							transform.localEulerAngles = new Vector3 (transform.localEulerAngles.x, ovrCamLeft.transform.eulerAngles.y, transform.localEulerAngles.z);
+								ovrCamLeft.camera.enabled = true;
+								ovrCamRight.camera.enabled = true;
+								mainCamera.enabled = false;
+								mouseLook.enabled = false;
+								transform.localEulerAngles = new Vector3 (transform.localEulerAngles.x, ovrCamLeft.transform.eulerAngles.y, transform.localEulerAngles.z);
 						} else {
-							ovrCamLeft.camera.enabled = false;
-							ovrCamRight.camera.enabled = false;
-							mainCamera.enabled = true;
-							mouseLook.enabled = true;
+								ovrCamLeft.camera.enabled = false;
+								ovrCamRight.camera.enabled = false;
+								mainCamera.enabled = true;
+								mouseLook.enabled = true;
 						}
-				}
-
+				} else {
+			mainCamera.enabled = false;
+			ovrCamLeft.camera.enabled = false;
+			ovrCamRight.camera.enabled = false;
+		}
+		
 	}
 	
 	void Start ()
