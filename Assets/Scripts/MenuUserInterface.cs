@@ -39,7 +39,6 @@ public class MenuUserInterface : MonoBehaviour {
 				for (int i = 0; i < networkManager.GetHostList().Length; i++) {
 					if (GUI.Button (new Rect (340, 360 * (1 + i), 300, 60), networkManager.GetHostList() [i].gameName)) {
 						networkManager.JoinServer (networkManager.GetHostList() [i]);
-						Application.LoadLevel ("LevelScene");
 					}
 				}
 			}

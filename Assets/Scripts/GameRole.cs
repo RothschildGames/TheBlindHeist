@@ -22,15 +22,12 @@ public class GameRole : MonoBehaviour {
         {
             if (Network.isServer)
             {
-                Debug.Log("IsRunner = true because server");
                 return true;
             }
             if (Network.isClient)
             {
-                Debug.Log("IsRunner = false because client");
                 return false;
             }
-            Debug.Log("IsRunner = " + isLocalPlayerRunner.ToString() + " because local");
             return isLocalPlayerRunner;
         }
     }
@@ -40,7 +37,6 @@ public class GameRole : MonoBehaviour {
         get
         {
             bool retVal = (Network.isClient || Network.isServer);
-            Debug.Log("IsNetworkGame = " + retVal.ToString());
             return retVal;
         }
     }
