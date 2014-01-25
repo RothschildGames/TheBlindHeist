@@ -4,6 +4,10 @@ using System.Collections;
 public class MenuUserInterface : MonoBehaviour {
 
 	private NetworkManager networkManager;
+	
+	public GUIStyle style;
+	public GUIStyle creditStyle;
+	public GUIStyle inputStyle;
 
 
 	// Use this for initialization
@@ -17,34 +21,51 @@ public class MenuUserInterface : MonoBehaviour {
 	}
 
 	void OnGUI () {
-
+		
+		float center = Screen.width/2;
+		float buttonWidth = 300;
+		float buttonHeight = 60;
+		float startY = 300;
+		float buttonMargin = 10;
+		
+		float buttonX = center - buttonWidth/2;
+		
+		float roomX = buttonX + buttonWidth + buttonMargin;
+		float roomW = 200;
+		//			float roomY = startY
 		if (!Network.isClient && !Network.isServer) {
-			
-			if (GUI.Button (new Rect (30, 220, 300, 60), "Start Local Game")) {
+
+			if (GUI.Button (new Rect (buttonX, startY, buttonWidth, buttonHeight), "PLAY LOCALLY", style)) {
 				Application.LoadLevel ("LevelScene");
 			}
-			
-			if (GUI.Button (new Rect (30, 290, 300, 60), "Host Server")) {
+
+			float button2Y = startY + (buttonHeight + buttonMargin);
+			if (GUI.Button (new Rect (buttonX, button2Y, buttonWidth, buttonHeight), "HOST SERVER", style)) {
 				networkManager.StartServer ();
 			}
 
-			GUI.Label (new Rect (340, 290, 200, 30), "Room name:");
+			creditStyle.alignment = TextAnchor.UpperLeft;
+			GUI.Label (new Rect (roomX, button2Y, roomW, 30), "ROOM NAME:", creditStyle);
 
-			networkManager.roomName = GUI.TextField(new Rect(340, 320, 300, 30), networkManager.roomName);
+			creditStyle.alignment = TextAnchor.MiddleLeft;
+			networkManager.roomName = GUI.TextField(new Rect(roomX, button2Y + 25 , roomW, 25), networkManager.roomName);
 			
-			if (GUI.Button (new Rect (30, 360, 300, 60), "Join Existing Game")) {
+			if (GUI.Button (new Rect (buttonX, startY + (buttonHeight + buttonMargin) * 2, buttonWidth, buttonHeight), "JOIN GAME", style)) {
 				networkManager.RefreshHostList ();
 			}				
 			if (networkManager.GetHostList() != null) {
 				for (int i = 0; i < networkManager.GetHostList().Length; i++) {
-					if (GUI.Button (new Rect (340, 360 * (1 + i), 300, 60), networkManager.GetHostList() [i].gameName)) {
+					if (GUI.Button (new Rect (340, 360 * (1 + i), 300, 60), networkManager.GetHostList() [i].gameName, style)) {
 						networkManager.JoinServer (networkManager.GetHostList() [i]);
 					}
 				}
 			}
+			creditStyle.alignment = TextAnchor.UpperCenter;
+			GUI.Label (new Rect (buttonX, Screen.height - 60, buttonWidth, 60), "MADE WITH LOVE #GGJ14 TLV\nAH, AS, IM, MS, NG, SD, YB", creditStyle);
+
 
 		} else if (Network.isServer) {
-			if (GUI.Button (new Rect (30, 220, 300, 60), "Start Game")) {
+			if (GUI.Button (new Rect (buttonX, startY, buttonWidth, buttonHeight), "START GAME", style)) {
 				Application.LoadLevel ("LevelScene");
 			}
 		} 
