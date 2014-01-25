@@ -2984,7 +2984,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 424477454}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -1.62920685e-07}
-  m_LocalPosition: {x: -25, y: 2.59113503, z: -15}
+  m_LocalPosition: {x: -25, y: 1.87814236, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 695080129}
@@ -3043,19 +3043,19 @@ MonoBehaviour:
       m_PostInfinity: 2
     maxGroundAcceleration: 20
     maxAirAcceleration: 15
-    gravity: 20
+    gravity: 0
     maxFallSpeed: 20
   jumping:
-    enabled: 1
+    enabled: 0
     baseHeight: 1
     extraHeight: 1
     perpAmount: 0
     steepPerpAmount: .5
   movingPlatform:
-    enabled: 1
+    enabled: 0
     movementTransfer: 2
   sliding:
-    enabled: 1
+    enabled: 0
     slidingSpeed: 10
     sidewaysControl: 1
     speedControl: .400000006
@@ -10372,11 +10372,11 @@ Transform:
   - {fileID: 1534165276}
   - {fileID: 1780555020}
   - {fileID: 1251060810}
+  - {fileID: 234817304}
   - {fileID: 376343836}
   - {fileID: 1572352153}
   - {fileID: 151180272}
   - {fileID: 1950684057}
-  - {fileID: 234817304}
   m_Father: {fileID: 0}
 --- !u!1001 &1453062091
 Prefab:
