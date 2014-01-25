@@ -44,6 +44,7 @@ public class GameUserInterface : MonoBehaviour {
 
     IEnumerator ReturnToMainMenuAfterDelay()
     {
+		// TODO: Need to check PlayAudio.isDone() before moving away.
         yield return new WaitForSeconds(3);
         Application.LoadLevel("MainMenuScene");
     }
