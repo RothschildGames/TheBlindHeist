@@ -14,7 +14,7 @@ public class GameLogicManager : MonoBehaviour {
     public static GameLogicManager singletonInstance;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
         if (singletonInstance != null)
         {
             Debug.LogError("Multiple GameLogicManager instances");
@@ -41,13 +41,23 @@ public class GameLogicManager : MonoBehaviour {
 
 	void OnSerializeNetworkView(BitStream stream, NetworkMessageInfo info) {
 		if (stream.isWriting) {
-			float duration = remainingDuration;
-			stream.Serialize(ref duration);
+				float duration = remainingDuration;
+				bool won = wonGame;
+				bool lost = lostGame;
+				stream.Serialize (ref duration);
+				stream.Serialize (ref won);
+				stream.Serialize (ref lost);
 		} else {
-			float duration = 0;
-			stream.Serialize(ref duration);
-			remainingDuration = duration;
-		}	
+				float duration = 0;
+				bool won = false;
+				bool lost = false;
+				stream.Serialize (ref duration);
+				stream.Serialize (ref won);
+				stream.Serialize (ref lost);
+				remainingDuration = duration;
+				wonGame = won;
+				lostGame = lost;
+		}
 	}
 
 	public void NotifyLostGame()

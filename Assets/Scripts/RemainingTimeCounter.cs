@@ -7,6 +7,11 @@ public class RemainingTimeCounter : MonoBehaviour
 	
 	void Update()
 	{
+		if ( GameLogicManager.singletonInstance==null) {
+			gText.text = "";
+			return;
+		}
+
 		float remainingDuration = GameLogicManager.singletonInstance.GetRemainingDuration();
 		if (remainingDuration < 0)
 		{
