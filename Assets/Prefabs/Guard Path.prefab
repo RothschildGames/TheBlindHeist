@@ -13,6 +13,8 @@ GameObject:
   - 23: {fileID: 2300000}
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400002}
+  - 114: {fileID: 11400008}
+  - 148: {fileID: 14800000}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -1093,6 +1095,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blink: 0
+--- !u!114 &11400008
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7380be09f83b441408dd248895df3b7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allowRunner: 1
+  allowHacker: 0
+  alwaysOnIfLocal: 1
+  gameObjects: []
+  components:
+  - {fileID: 11400000}
 --- !u!136 &13600000
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -1145,6 +1164,18 @@ CapsuleCollider:
   m_Height: 1.60000002
   m_Direction: 1
   m_Center: {x: 0, y: .800000012, z: 0}
+--- !u!148 &14800000
+NetworkView:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_StateSynchronization: 1
+  m_Observed: {fileID: 400000}
+  m_ViewID:
+    m_ID: 0
+    m_Type: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
