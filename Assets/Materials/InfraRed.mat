@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: constructor_done
-  m_Shader: {fileID: 11, guid: 0000000000000000f000000000000000, type: 0}
+  m_Name: InfraRed
+  m_Shader: {fileID: 10, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -17,14 +17,21 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: 97b050d43ac7c4d2b9f6cbb587650761, type: 3}
+          m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _BumpMap
         second:
-          m_Texture: {fileID: 2800000, guid: 531c14f8d5cdc4e5baa83ee6e16f783a, type: 3}
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _DecalTex
+        second:
+          m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -38,7 +45,7 @@ Material:
       data:
         first:
           name: _Shininess
-        second: .078125
+        second: .762765169
       data:
         first:
           name: _EmissionLM
@@ -51,7 +58,8 @@ Material:
       data:
         first:
           name: _SpecColor
-        second: {r: .5, g: .5, b: .5, a: 1}
---- !u!1002 &2100001
-EditorExtensionImpl:
-  serializedVersion: 6
+        second: {r: 1, g: 1, b: 1, a: 0}
+      data:
+        first:
+          name: _Emission
+        second: {r: .683823526, g: .683823526, b: .683823526, a: 0}
