@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class GameLogicManager : MonoBehaviour {
+	public CameraManager cameraManager;
 
     internal bool wonGame;
 	internal bool lostGame;
@@ -39,6 +40,7 @@ public class GameLogicManager : MonoBehaviour {
 			Debug.Log ("Lost Game!");
 			wonGame = false;
 			lostGame = true;
+			cameraManager.initEndGame(false);
 		}
 	}
 	
@@ -48,6 +50,7 @@ public class GameLogicManager : MonoBehaviour {
 			Debug.Log ("Won Game!");
 			wonGame = true;
 			lostGame = false;
+			cameraManager.initEndGame(true);
 		}
     }
 

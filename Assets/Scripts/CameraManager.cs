@@ -6,6 +6,7 @@ public class CameraManager : MonoBehaviour {
 	public List<SecurityCamera> cameras;
 	public SecurityCamera noiseCamera;
 	public float switchTimeout = 0.5f;
+	public PlayVideo hackerType;
 
 	private List<SecurityCamera> noiseCameras= new List<SecurityCamera>();
 
@@ -108,5 +109,15 @@ public class CameraManager : MonoBehaviour {
 			if (currentCameras[i] == c) return i;
 		}
 		return -1;
+	}
+
+	public void initEndGame(bool isWon) {
+		for (int i = 0; i < currentCameras.Length; ++i) {
+			currentCameras[i].camera.enabled = false;
+			currentCameras[i].controlable = false;
+			noiseCameras[i].camera.enabled = true;
+		}
+		hackerType.Pause();
+		this.enabled = false;
 	}
 }

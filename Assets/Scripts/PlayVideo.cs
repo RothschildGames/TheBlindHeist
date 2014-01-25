@@ -27,4 +27,8 @@ public class PlayVideo : MonoBehaviour {
 	void Update () {
 	
 	}
+
+	public void Pause() {
+		movieTx.Pause();
+	}
 }
