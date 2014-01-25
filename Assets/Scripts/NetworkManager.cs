@@ -42,6 +42,10 @@ public class NetworkManager : MonoBehaviour {
 			Debug.Log ("server registered");
 	}
 
+	public int CountConnectedUsers()
+	{
+		return Network.connections.Length;
+	}
 
 
 	//******** client code
