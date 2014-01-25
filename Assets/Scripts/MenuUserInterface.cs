@@ -44,18 +44,23 @@ public class MenuUserInterface : MonoBehaviour {
 				networkManager.StartServer ();
 			}
 
-			creditStyle.alignment = TextAnchor.UpperLeft;
-			GUI.Label (new Rect (roomX, button2Y, roomW, 30), "ROOM NAME:", creditStyle);
+			if (networkManager.GetHostList() == null) {
+				creditStyle.alignment = TextAnchor.UpperLeft;
+				GUI.Label (new Rect (roomX, button2Y, roomW, 30), "ROOM NAME:", creditStyle);
 
-			creditStyle.alignment = TextAnchor.MiddleLeft;
-			networkManager.roomName = GUI.TextField(new Rect(roomX, button2Y + 25 , roomW, 25), networkManager.roomName);
-			
-			if (GUI.Button (new Rect (buttonX, startY + (buttonHeight + buttonMargin) * 2, buttonWidth, buttonHeight), "JOIN GAME", style)) {
+				creditStyle.alignment = TextAnchor.MiddleLeft;
+				networkManager.roomName = GUI.TextField(new Rect(roomX, button2Y + 25 , roomW, 25), networkManager.roomName);
+			}
+
+			float button3Y = startY + (buttonHeight + buttonMargin) * 2;
+			if (GUI.Button (new Rect (buttonX, button3Y, buttonWidth, buttonHeight), "JOIN GAME", style)) {
 				networkManager.RefreshHostList ();
 			}				
 			if (networkManager.GetHostList() != null) {
+				creditStyle.alignment = TextAnchor.UpperLeft;
+				GUI.Label (new Rect (roomX, startY, roomW, 30), "OPEN ROOMS:", creditStyle);
 				for (int i = 0; i < networkManager.GetHostList().Length; i++) {
-					if (GUI.Button (new Rect (340, 360 * (1 + i), 300, 60), networkManager.GetHostList() [i].gameName, style)) {
+					if (GUI.Button (new Rect (roomX, startY + 30 + 40 * (i), buttonWidth, 30), networkManager.GetHostList() [i].gameName)) {
 						networkManager.JoinServer (networkManager.GetHostList() [i]);
 					}
 				}
