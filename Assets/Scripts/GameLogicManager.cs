@@ -61,4 +61,9 @@ public class GameLogicManager : MonoBehaviour {
 	public bool isOver() {
 		return (wonGame || lostGame);
 	}
+
+	public float GetRemainingDuration()
+	{
+		return remainingDuration;
+	}
 }
