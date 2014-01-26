@@ -10,8 +10,8 @@ PlayerSettings:
   targetGlesGraphics: 1
   targetResolution: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
-  productName: o11
+  companyName: GGJ14-TLV
+  productName: The Blind Heist
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   defaultScreenWidth: 1024
@@ -112,8 +112,24 @@ PlayerSettings:
   m_BuildTargetIcons:
   - m_BuildTarget: 
     m_Icons:
-    - m_Icon: {fileID: 0}
+    - m_Icon: {fileID: 2800000, guid: f61bc16087b0c4c5392561d5aec03f16, type: 3}
       m_Size: 128
+  - m_BuildTarget: Standalone
+    m_Icons:
+    - m_Icon: {fileID: 2800000, guid: 70bfffc4be4ae48ea85823d24acf0976, type: 3}
+      m_Size: 1024
+    - m_Icon: {fileID: 2800000, guid: 5e6c6e1abfc4d444aac558221d85a2e6, type: 3}
+      m_Size: 512
+    - m_Icon: {fileID: 2800000, guid: b33baf8116f3b4b789f63eeae2e06659, type: 3}
+      m_Size: 256
+    - m_Icon: {fileID: 2800000, guid: f61bc16087b0c4c5392561d5aec03f16, type: 3}
+      m_Size: 128
+    - m_Icon: {fileID: 2800000, guid: 1b945aeff39124016b3a88d278f3e03b, type: 3}
+      m_Size: 48
+    - m_Icon: {fileID: 2800000, guid: b6164b922457e42fba208f9a6c604ee5, type: 3}
+      m_Size: 32
+    - m_Icon: {fileID: 2800000, guid: 89b5c8c4b76b3427e95f2a61b8e8980f, type: 3}
+      m_Size: 16
   m_BuildTargetBatching: []
   webPlayerTemplate: APPLICATION:Default
   m_TemplateCustomTags: {}
